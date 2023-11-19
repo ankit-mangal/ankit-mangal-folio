@@ -407,7 +407,11 @@ h2 {
     justify-content: center;
     align-items: center;
   }
-
+  
+  .social-icons ul a:active{
+    color: black;
+  }
+  
   .social-icons [class*="fa-"] {
     font-size: 70px;
   }
