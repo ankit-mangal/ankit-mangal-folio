@@ -469,7 +469,7 @@ footer small {
     color: gray;
     cursor: pointer;
   }
-  */ footer small {
+  footer small {
     font-size: 20px;
   }
 }
