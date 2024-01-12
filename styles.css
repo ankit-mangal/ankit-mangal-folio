@@ -225,6 +225,7 @@ h2 {
 .exp-content ul {
   list-style: none;
   font-size: 16px;
+  line-height: 2;
 }
 
 .exp-content ul li:before {
@@ -438,7 +439,7 @@ footer small {
 
   .exp-content {
     height: 300px;
-    width: 48%;
+    width: 100%;
   }
 
   #projects {
