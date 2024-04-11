@@ -14,6 +14,7 @@ loadHTMLContent("experienceContainer", "./components/experience.html");
 loadHTMLContent("projectsContainer", "./components/projects.html");
 loadHTMLContent("socialContainer", "./components/social.html");
 loadHTMLContent("footerContainer", "./components/footer.html");
+loadHTMLContent("skillContainer", "./components/skills.html");
 
 function performElementSelection() {
   // Code for menu functionality

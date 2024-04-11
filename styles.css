@@ -13,14 +13,12 @@ body {
 }
 
 :root {
-  --blue: #363062;
-  --light-blue: #4d4c7d;
-  --yellow: #f99417;
   --off-white: #f5f5f5;
 }
 
 h2 {
   text-align: center;
+  font-size: 43px;
 }
 
 .menu {
@@ -31,7 +29,7 @@ h2 {
 
 .navigation {
   background: var(--off-white);
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   position: relative;
 }
 
@@ -112,8 +110,8 @@ h2 {
 }
 
 .ankit-mangal img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80%;
+  max-height: 80%;
   border: 10px solid gray;
 }
 
@@ -175,6 +173,7 @@ h2 {
   background: black;
   padding: 10px 15px;
   font-family: inherit;
+  font-size: 15px;
   margin-top: 15px;
 }
 
@@ -190,11 +189,6 @@ h2 {
 }
 
 /* experience section styles  */
-
-.exp-container h2 {
-  font-size: 30px;
-}
-
 .exp-container {
   padding: 2rem;
 }
@@ -252,10 +246,6 @@ h2 {
   padding: 2rem;
 }
 
-.projects-content > h2 {
-  font-size: 30px;
-}
-
 .projects-content p {
   height: 100px;
   max-height: 100%;
@@ -279,10 +269,6 @@ h2 {
 
 .social {
   padding: 2rem 4rem;
-}
-
-.social > div > h2 {
-  font-size: 30px;
 }
 
 .social-icons ul {
@@ -310,13 +296,12 @@ h2 {
 
 /* footer styles  */
 footer {
-  padding: 2px 4rem 2rem;
+  height: 70px;
   text-align: center;
 }
 
 footer small {
   font-size: 12px;
-  padding-bottom: 10px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -426,9 +411,6 @@ footer small {
     padding: 2rem 4rem;
   }
 
-  .exp-container h2 {
-    font-size: 45px;
-  }
 
   .experience {
     display: flex;
@@ -450,14 +432,6 @@ footer small {
     padding: 2rem 4rem;
   }
 
-  .projects > div > h2 {
-    font-size: 45px;
-  }
-
-  .social > div > h2 {
-    font-size: 45px;
-  }
-
   .social-icons [class*="fa-"] {
     font-size: 70px;
   }
@@ -470,7 +444,14 @@ footer small {
     color: gray;
     cursor: pointer;
   }
+
+  footer{
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   footer small {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
