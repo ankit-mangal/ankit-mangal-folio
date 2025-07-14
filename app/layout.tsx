@@ -11,6 +11,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Ankit - Frontend Developer",
   description: "Frontend developer with 3+ years of experience in React, Next.js, and TypeScript. Creating high-performance web applications and leading development teams.",
+  icons: {
+    icon: '/ankit-mangal.png',
+    shortcut: '/ankit-mangal.png',
+    apple: '/ankit-mangal.png',
+  },
 };
 
 export default function RootLayout({
