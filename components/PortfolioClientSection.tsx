@@ -487,7 +487,7 @@ export default function PortfolioClientSection() {
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 text-center">
         <p className="text-[#e0fbfc]/80">
-          © 2024 Ankit. Built with Next.js, TypeScript, and Tailwind CSS.
+          © 2025 Ankit. Built with ❤️.
         </p>
       </footer>
     </div>
