@@ -4,12 +4,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Mail, Github, Linkedin, ExternalLink, CircleArrowOutUpRight, MapPin } from "lucide-react";
 import Link from "next/link";
+import LoadingScreen from "./LoadingScreen";
 
 export default function PortfolioClientSection() {
   const cardsRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const [experienceYears, setExperienceYears] = useState(3); // Default fallback
   const [isMounted, setIsMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Contact form state and logic
   const [email, setEmail] = useState("");
@@ -71,6 +73,11 @@ export default function PortfolioClientSection() {
     setSubmitting(false);
   }
 
+  // Handle loading completion
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   // Set mounted state to prevent hydration issues
   useEffect(() => {
     setIsMounted(true);
@@ -92,7 +99,7 @@ export default function PortfolioClientSection() {
   }, [isMounted]);
 
   useEffect(() => {
-    if (!isMounted) return;
+    if (!isMounted || isLoading) return;
 
     // Dynamically import ScrollTrigger to avoid SSR issues
     const initAnimations = async () => {
@@ -153,27 +160,11 @@ export default function PortfolioClientSection() {
         gsap.killTweensOf(heroRef.current);
       }
     };
-  }, [isMounted]);
+  }, [isMounted, isLoading]);
 
-  // Don't render until mounted to prevent hydration issues
-  if (!isMounted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-              Ankit
-            </h1>
-            <p className="text-xl md:text-2xl text-cyan-400 mb-6 font-medium">
-              Frontend Developer
-            </p>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              I shape imaginations into working ideas on web
-            </p>
-          </div>
-        </div>
-      </div>
-    );
+  // Show loading screen if not mounted or still loading
+  if (!isMounted || isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
   }
 
   return (
@@ -206,7 +197,7 @@ export default function PortfolioClientSection() {
           </div>
         </div>
       </section>
-
+      
       {/* Bento Grid Portfolio Sections */}
       <section className="container mx-auto px-4 pb-16">
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -235,7 +226,7 @@ export default function PortfolioClientSection() {
               href="https://drive.google.com/file/d/1s9D0EuBGOrjAyv487D20Gmf-HHQ4ubWz/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center mt-2 px-5 py-2 text-sm bg-[#98c1d9] text-[#293241] rounded-lg hover:bg-[#e0fbfc] hover:text-[#3d5a80] transition-all duration-300 text-base font-semibold shadow-lg hover:shadow-xl"
+              className="inline-flex items-center mt-2 px-5 py-2 text-sm bg-[#98c1d9] text-[#293241] rounded-lg hover:bg-[#e0fbfc] hover:text-[#3d5a80] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
             >
               <ExternalLink className="mr-2 w-5 h-5" />
               View Resume
@@ -501,4 +492,4 @@ export default function PortfolioClientSection() {
       </footer>
     </div>
   );
-} 
+}
