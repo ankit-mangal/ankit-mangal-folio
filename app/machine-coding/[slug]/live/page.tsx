@@ -1,4 +1,3 @@
-// app/machine-coding/[slug]/live/page.tsx
 import dynamic from "next/dynamic";
 
 const liveComponents: Record<string, any> = {
@@ -11,14 +10,15 @@ const liveComponents: Record<string, any> = {
   // add more as you go...
 };
 
-export default function LivePage({ params }: { params: { slug: string } }) {
-  const Component = liveComponents[params.slug];
+export default async function LivePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const Component = liveComponents[slug];
 
   if (!Component) {
     return (
       <div className="h-screen flex items-center justify-center">
         <h1 className="text-2xl font-bold">
-          No live demo available for "{params.slug}"
+          No live demo available for "{slug}"
         </h1>
       </div>
     );
