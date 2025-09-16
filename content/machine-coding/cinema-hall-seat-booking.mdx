@@ -1,0 +1,27 @@
+---
+title: "Cinema Ticket Booking System"
+description: "Implement a seat booking system for a cinema hall with real-time availability."
+image: "/images/machine-coding/cinema-booking.png"
+technologies: ["React", "TypeScript", "TailwindCSS"]
+---
+
+## Approach
+- Break down UI into SeatGrid, BookingForm, Summary
+- Manage state with Context/Redux
+- Ensure edge cases like double booking
+
+## Crux
+The challenge is **state synchronization** across components and preventing race conditions.
+
+## Code Example
+```tsx
+function Seat({ isBooked, onSelect }) {
+  return (
+    <button
+      className={`p-2 rounded ${isBooked ? "bg-red-500" : "bg-green-500"}`}
+      onClick={onSelect}
+    >
+      {isBooked ? "Booked" : "Available"}
+    </button>
+  );
+}
