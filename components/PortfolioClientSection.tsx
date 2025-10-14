@@ -83,7 +83,7 @@ const BentoCard = ({
     switch (data.type) {
       case "profile":
         return (
-          <div className="w-full h-64 rounded-xl overflow-hidden border-2 border-[#98c1d9]">
+          <div className="w-full hidden lg:block h-64 rounded-xl overflow-hidden border-2 border-[#98c1d9]">
             <img
               src={data.content.imageSrc}
               alt={data.content.alt}
@@ -560,15 +560,15 @@ export default function PortfolioClientSection() {
               </span>
             </h1>
 
-            <div className="flex items-center justify-center gap-6">
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-[#98c1d9] rounded-full"></div>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#98c1d9] tracking-tight">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-16 lg:w-36 h-0.5 bg-gradient-to-r from-transparent to-[#98c1d9] rounded-full"></div>
+              <h2 className="text-[22px] md:text-4xl lg:text-5xl font-bold text-[#98c1d9] tracking-tight">
                 Frontend Developer
               </h2>
-              <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-[#98c1d9] rounded-full"></div>
+              <div className="w-16 lg:w-36 h-0.5 bg-gradient-to-l from-transparent to-[#98c1d9] rounded-full"></div>
             </div>
 
-            <p className="text-sm tracking-wider md:text-xl lg:text-2xl text-[#e0fbfc]/90 max-w-64 lg:max-w-full mx-auto">
+            <p className="text-base tracking-wider md:text-xl lg:text-2xl text-[#e0fbfc]/90 max-w-64 lg:max-w-full mx-auto">
               I shape imaginations into functional UIs on Web!
             </p>
           </div>
